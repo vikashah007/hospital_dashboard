@@ -19,7 +19,7 @@ const AddNewAdmin = () => {
     e.preventDefault();
     try {
       const response = await axios.post(
-        "http://localhost:4000/api/v1/user/admin/addnew",
+        "https://hospital-management-backend-dut4.onrender.com/api/v1/user/admin/addnew",
         { firstname, lastname, email, phone, nic, dob, gender, password},
         {
           withCredentials: true,
