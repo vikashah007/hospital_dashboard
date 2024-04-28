@@ -1,4 +1,4 @@
-import React, { useContext, useEffect, useState } from "react";
+import { useContext, useEffect, useState } from "react";
 import { Navigate } from "react-router-dom";
 import { Context } from "../main";
 import axios from "axios";
@@ -14,7 +14,7 @@ const Dashboard = () => {
     const fetchAppointments = async () => {
       try {
         const { data } = await axios.get(
-          "https://hospital-management-backend-dut4.onrender.com/api/v1/appointment/getall",
+          "http://localhost:4000/api/v1/appointment/getall",
           { withCredentials: true }
         );
         setAppointments(data.appointments);
@@ -29,7 +29,7 @@ const Dashboard = () => {
   const handleUpdateStatus = async (appointmentId, status) => {
     try {
       const { data } = await axios.put(
-        "https://hospital-management-backend-dut4.onrender.com/api/v1/appointment/update/${appointmentId}",
+        "http://localhost:4000/api/v1/appointment/update/${appointmentId}",
         { status },
         { withCredentials: true }
       );

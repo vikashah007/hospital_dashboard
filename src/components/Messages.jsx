@@ -1,4 +1,4 @@
-import React, { useContext, useEffect, useState } from "react";
+import { useContext, useEffect, useState } from "react";
 import { Context } from "../main";
 import axios from "axios";
 import { Navigate } from "react-router-dom";
@@ -10,7 +10,7 @@ const Messages = () => {
     const fetchMessages = async () => {
       try {
         const { data } = await axios.get(
-          "https://hospital-management-backend-dut4.onrender.com/api/v1/message/getall",
+          "http://localhost:4000/api/v1/message/getall",
           { withCredentials: true }
         );
         setMessages(data.messages);

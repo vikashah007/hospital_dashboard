@@ -18,7 +18,7 @@ const App = () => {
   useEffect(()=>{
     const fetchUser=async()=>{
       try {
-        const response=await axios.get("https://hospital-management-backend-dut4.onrender.com/api/v1/user/admin/me",{withCredentials:true})
+        const response=await axios.get("http://localhost:4000/api/v1/user/admin/me",{withCredentials:true})
         setIsauthenticated(true)
         setUser(response.data.user)
       } catch (error) {
@@ -47,4 +47,4 @@ const App = () => {
 }
 
 export default App
-// https://hospital-management-backend-dut4.onrender.com
+// http://localhost:4000
